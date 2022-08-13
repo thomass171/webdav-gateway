@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:oc="http://owncloud.org/ns"
+               xmlns:nc="http://nextcloud.org/ns">
+    <d:response>
+        <d:href>/public.php/webdav/</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Tue, 17 May 2022 04:18:27 GMT</d:getlastmodified>
+                <d:resourcetype>
+                    <d:collection/>
+                </d:resourcetype>
+                <d:quota-used-bytes>84823414</d:quota-used-bytes>
+                <d:quota-available-bytes>-3</d:quota-available-bytes>
+                <d:getetag>&quot;6283221396c31&quot;</d:getetag>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+    </d:response>
+    <d:response>
+        <d:href>/public.php/webdav/lake.jpg</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Mon, 15 Nov 2021 19:31:42 GMT</d:getlastmodified>
+                <d:getcontentlength>593508</d:getcontentlength>
+                <d:resourcetype/>
+                <d:getetag>&quot;cd926f83a4a56d5b8e35574e2984c6cf&quot;</d:getetag>
+                <d:getcontenttype>image/jpeg</d:getcontenttype>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-used-bytes/>
+                <d:quota-available-bytes/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+    <d:response>
+        <d:href>/public.php/webdav/Frog.jpg</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Mon, 15 Nov 2021 19:31:42 GMT</d:getlastmodified>
+                <d:getcontentlength>457744</d:getcontentlength>
+                <d:resourcetype/>
+                <d:getetag>&quot;fbb6e604703f666d091c92ecf0f74c06&quot;</d:getetag>
+                <d:getcontenttype>image/jpeg</d:getcontenttype>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-used-bytes/>
+                <d:quota-available-bytes/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+    <d:response>
+        <d:href>/public.php/webdav/Gorilla.jpg</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Mon, 15 Nov 2021 19:31:42 GMT</d:getlastmodified>
+                <d:getcontentlength>474653</d:getcontentlength>
+                <d:resourcetype/>
+                <d:getetag>&quot;caa384cd8ed4d83ab19c631b0614428a&quot;</d:getetag>
+                <d:getcontenttype>image/jpeg</d:getcontenttype>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-used-bytes/>
+                <d:quota-available-bytes/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+    <d:response>
+        <d:href>/public.php/webdav/IMG_3779-zum-Test.MOV</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Thu, 05 May 2022 17:03:44 GMT</d:getlastmodified>
+                <d:getcontentlength>79163991</d:getcontentlength>
+                <d:resourcetype/>
+                <d:getetag>&quot;cf01c9f67f4c2f57d288186cfca64182&quot;</d:getetag>
+                <d:getcontenttype>video/quicktime</d:getcontenttype>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-used-bytes/>
+                <d:quota-available-bytes/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+    <d:response>
+        <d:href>/public.php/webdav/Nextcloud%20community.jpg</d:href>
+        <d:propstat>
+            <d:prop>
+                <d:getlastmodified>Mon, 15 Nov 2021 19:31:42 GMT</d:getlastmodified>
+                <d:getcontentlength>797325</d:getcontentlength>
+                <d:resourcetype/>
+                <d:getetag>&quot;1d6c4e49dbaa10e60dfde8daf62fc7b5&quot;</d:getetag>
+                <d:getcontenttype>image/jpeg</d:getcontenttype>
+            </d:prop>
+            <d:status>HTTP/1.1 200 OK</d:status>
+        </d:propstat>
+        <d:propstat>
+            <d:prop>
+                <d:quota-used-bytes/>
+                <d:quota-available-bytes/>
+            </d:prop>
+            <d:status>HTTP/1.1 404 Not Found</d:status>
+        </d:propstat>
+    </d:response>
+</d:multistatus>

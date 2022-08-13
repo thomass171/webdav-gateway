@@ -1,0 +1,21 @@
+server: nginx
+date: Fri, 05 Aug 2022 13:24:13 GMT
+content-type: application/xml; charset=utf-8
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+set-cookie: oc_sessionPassphrase=EtTbn9g%2F2WJNU1xO%2FEkhqmFzRSOiFEzEka0g4etXtNsH; path=/; secure; HttpOnly; SameSite=Lax
+set-cookie: oca0c0pjlkz8=9db186dc6f4ef7fc70b16a23bfc6512a; path=/; secure; HttpOnly; SameSite=Lax
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-RUVXN3iN3d2w1RT0='; style-src 'self' 'unsafe-inline'; frame-src *; img-src * data: blob:; font-src 'self' data:; media-src *; connect-src *; object-src 'none'; base-uri 'self';
+set-cookie: __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100 23:59:59 GMT; SameSite=lax
+set-cookie: __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100 23:59:59 GMT; SameSite=strict
+vary: Brief,Prefer
+dav: 1, 3, extended-mkcol
+strict-transport-security: max-age=15768000; includeSubDomains;
+referrer-policy: no-referrer
+x-content-type-options: nosniff
+x-download-options: noopen
+x-frame-options: SAMEORIGIN
+x-permitted-cross-domain-policies: none
+x-robots-tag: none
+x-xss-protection: 1; mode=block
