@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>yard.de</groupId>
-	<artifactId>webdav-photo-album</artifactId>
+	<artifactId>webdav-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>webdav-proxy</name>
-	<description>webdav photo album</description>
+	<description>webdav gateway</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>

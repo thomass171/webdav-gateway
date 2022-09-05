@@ -1,4 +1,6 @@
-# webdav-proxy
-A proxy/gateway/bridge for mapping a webdav interface (eg. Nextcloud) to an easy to use REST like HTTP endpoint.
+# webdav-gateway
+A simple read only gateway/bridge for mapping a webdav interface (eg. Nextcloud) to an easy to use REST like HTTP endpoint. This might than be used for web clients for easy fetching webdav data. 
 
-The maven wrapper fails with current Idea and Java 8.
+Providing a CORS proxy was the initial and main reason for this gateway.
+
+https://github.com/thomass171/web-photo-album is a web photo album that uses this gateway.
