@@ -29,6 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 
+//TODO why is mockmvc logging request/response bodies? Should only do on failure. Causes garbage output to terminal when downloading an image.
 @SpringBootTest
 @AutoConfigureMockMvc
 class WebDavControllerTest {

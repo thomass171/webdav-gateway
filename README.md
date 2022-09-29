@@ -4,3 +4,23 @@ A simple read only gateway/bridge for mapping a webdav interface (eg. Nextcloud)
 Providing a CORS proxy was the initial and main reason for this gateway.
 
 https://github.com/thomass171/web-photo-album is a web photo album that uses this gateway.
+
+# Building
+
+Just a
+
+```
+mvn clean install
+```
+
+# Local Testing
+
+```
+sh bin/startServer.sh
+```
+
+In a browser enter
+
+```
+localhost:8019
+```
