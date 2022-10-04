@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.InputStream;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
@@ -24,7 +24,11 @@ public class WebDavController {
     @CrossOrigin
     @GetMapping(BASEURL_CONTENT)
     public ResponseEntity<String> webdavContent(@RequestParam String host, @RequestParam String user) {
-        return ResponseEntity.ok(service.propfind(host, user).stream().collect(Collectors.joining("\n")));
+        PropfindResult propfindResult = service.propfind(host, user);
+        if (propfindResult.getFailureMessage() != null) {
+            return ResponseEntity.internalServerError().body(propfindResult.getFailureMessage());
+        }
+        return ResponseEntity.ok(propfindResult.getFilelist().stream().collect(Collectors.joining("\n")));
     }
 
     @CrossOrigin

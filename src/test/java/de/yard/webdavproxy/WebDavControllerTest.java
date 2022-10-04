@@ -1,6 +1,7 @@
 package de.yard.webdavproxy;
 
 import de.yard.TestUtils;
+import de.yard.webdavproxy.controller.PropfindResult;
 import de.yard.webdavproxy.controller.WebDavService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -46,11 +47,12 @@ class WebDavControllerTest {
         List<String> list = new ArrayList<>();
         list.add("entry1");
         list.add("entry2");
+        PropfindResult propfindResult = new PropfindResult(list);
 
         ArgumentCaptor<String> argumentHost = ArgumentCaptor.forClass(String.class);
         ArgumentCaptor<String> argumentUser = ArgumentCaptor.forClass(String.class);
 
-        Mockito.when(webDavService.propfind(argumentHost.capture(), argumentUser.capture())).thenReturn(list);
+        Mockito.when(webDavService.propfind(argumentHost.capture(), argumentUser.capture())).thenReturn(propfindResult);
 
         mockMvc.perform(get(BASEURL_CONTENT).param("host", HOST).param("user", USER))
                 .andDo(print()).andExpect(status().isOk())

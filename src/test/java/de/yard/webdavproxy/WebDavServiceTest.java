@@ -4,6 +4,7 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.http.HttpHeader;
 import com.github.tomakehurst.wiremock.http.HttpHeaders;
 import de.yard.TestUtils;
+import de.yard.webdavproxy.controller.PropfindResult;
 import de.yard.webdavproxy.controller.WebDavService;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,10 +56,23 @@ class WebDavServiceTest {
         WireMock.stubFor(WireMock.any(WireMock.urlEqualTo("/webdav"))
                 .willReturn(aResponse().withStatus(207).withStatusMessage("HTTP/2 207").withHeaders(responseHeaders).withBody(responseBody)));
 
-        List<String> fileList = this.webDavService.propfind("http://localhost:8085/webdav", "aa");
-        assertEquals(6, fileList.size());
+        PropfindResult propfindResult = this.webDavService.propfind("http://localhost:8085/webdav", "aa");
+        assertEquals(6, propfindResult.getFilelist().size());
         // Blanks in file names should already be encoded
-        assertEquals("Nextcloud%20community.jpg", fileList.get(5));
+        assertEquals("Nextcloud%20community.jpg", propfindResult.getFilelist().get(5));
+    }
+
+    @Test
+    public void testPropFindHttpFailure() throws Exception {
+
+        HttpHeaders responseHeaders = buildHeaderFromTemplate("response-header-propfind.txt");
+
+        WireMock.stubFor(WireMock.any(WireMock.urlEqualTo("/webdav"))
+                .willReturn(aResponse().withStatus(400).withStatusMessage("HTTP/2 400").withHeaders(responseHeaders).withBody("")));
+
+        PropfindResult propfindResult = this.webDavService.propfind("http://localhost:8085/webdav", "aa");
+        assertNull(propfindResult.getFilelist());
+        assertEquals("webdav returned http code 400", propfindResult.getFailureMessage());
     }
 
     @Test

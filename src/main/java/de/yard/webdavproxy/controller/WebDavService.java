@@ -32,7 +32,11 @@ import java.util.List;
 @Slf4j
 public class WebDavService {
 
-    public List<String> propfind(String host, String user) {
+    /**
+     * Retrieve list of files from host.
+     *
+     */
+    public PropfindResult propfind(String host, String user) {
         log.debug("listOfFilesFromWebDav");
 
         try {
@@ -41,7 +45,9 @@ public class WebDavService {
             HttpPropfind propfind = new HttpPropfind(uri, 0, 1);
 
             HttpResponse rsp = execute(propfind, user);
-
+            if (rsp.getStatusLine().getStatusCode() > 299) {
+                return new PropfindResult("webdav returned http code " + rsp.getStatusLine().getStatusCode());
+            }
             List<String> files = new ArrayList<>();
             MultiStatus multiStatus = propfind.getResponseBodyAsMultiStatus(rsp);
             MultiStatusResponse[] responses = multiStatus.getResponses();
@@ -55,10 +61,10 @@ public class WebDavService {
                 }
                 files.add(name);
             }
-            return files;
+            return new PropfindResult(files);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            log.error("propfind failed: {}", e.getMessage(), e);
+            return new PropfindResult(e.getMessage());
         }
     }
 
@@ -104,6 +110,7 @@ public class WebDavService {
 
         log.debug("posting request {}", request);
         HttpResponse rsp = client.execute(request);
+        log.debug("request status: {}", rsp.getStatusLine());
         return rsp;
     }
 }
