@@ -5,6 +5,7 @@ import com.github.tomakehurst.wiremock.http.HttpHeader;
 import com.github.tomakehurst.wiremock.http.HttpHeaders;
 import de.yard.TestUtils;
 import de.yard.webdavproxy.controller.PropfindResult;
+import de.yard.webdavproxy.controller.Util;
 import de.yard.webdavproxy.controller.WebDavService;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,6 +21,7 @@ import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
@@ -100,6 +102,22 @@ class WebDavServiceTest {
         ResponseEntity<InputStreamResource> response = this.webDavService.image("http://localhost:8085/backend", "aa", "/lakeXX.jpg");
         assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusCode().value());
         assertNull(response.getBody());
+    }
+
+    @Test
+    public void testText() throws Exception {
+
+        String content = "A string with some non ascii characters: öäüÖÄÜß";
+        byte[] responseBody = content.getBytes(StandardCharsets.UTF_8);
+
+        HttpHeaders responseHeaders = buildHeaderFromTemplate("response-header-md.txt");
+
+        WireMock.stubFor(WireMock.any(WireMock.urlEqualTo("/backend/Readme.md"))
+                .willReturn(aResponse().withStatus(200).withStatusMessage("HTTP/2 200").withHeaders(responseHeaders).withBody(responseBody)));
+
+        ResponseEntity<InputStreamResource> response = this.webDavService.text("http://localhost:8085/backend", "aa", "/Readme.md");
+        assertNotNull(response.getBody());
+        assertEquals(content, Util.convertInputStreamToString(response.getBody()));
     }
 
     private HttpHeaders buildHeaderFromTemplate(String file) throws Exception {

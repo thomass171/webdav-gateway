@@ -1,0 +1,25 @@
+Server: nginx
+Date: Tue, 25 Oct 2022 15:31:57 GMT
+Content-Type: text/markdown;charset=UTF-8
+Content-Length: 150
+Connection: keep-alive
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, Pragma: no-cache
+Set-Cookie: oc_sessionPassphrase=ypzLLuRK6tyLUL8AHLYiMmI4maG3XuCD8YdGNxvja; path=/; secure; HttpOnly; SameSite=Lax
+Set-Cookie: oca0c0pjlkz8=905994d27499e; path=/; secure; HttpOnly; SameSite=Lax
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-Um95SThGY3pPOUFkcExyMGRmUHclgyZDdkS3IzT1ZWST0='; style-src 'self' 'unsafe-inline'; frame-src *; img-src * data: blob:; font-src 'self' data:; media-src *; connect-src *; object-src 'none'; base-uri 'self';
+Set-Cookie: __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100 23:59:59 GMT; SameSite=lax
+Set-Cookie: __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100 23:59:59 GMT; SameSite=strict
+Last-Modified: Mon, 15 Nov 2021 19:31:42 GMT
+ETag: "896263c8dec1112e"
+OC-ETag: "896263c1112e"
+X-Request-Id: 8p64BDfva3f0
+Content-Disposition: attachment; filename*=UTF-8''Readme.md; filename="Readme.md"
+Strict-Transport-Security: max-age=15768000; includeSubDomains;
+Referrer-Policy: no-referrer
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: none
+X-XSS-Protection: 1; mode=block] ResponseEntityProxy{[Content-Type: text/markdown;charset=UTF-8,Content-Length: 150,Chunked: false]}

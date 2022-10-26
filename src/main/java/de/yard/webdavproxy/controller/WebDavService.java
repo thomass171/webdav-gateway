@@ -95,6 +95,33 @@ public class WebDavService {
         }
     }
 
+    public ResponseEntity<InputStreamResource> text(String host, String user, String name) {
+        log.debug("text host={}, user={}, name={}", host, user, name);
+
+        try {
+
+            URI uri = new URI(host + "/" + name);
+            HttpUriRequest getter = RequestBuilder.get()
+                    .setUri(uri)
+                    .build();
+
+            HttpResponse rsp = execute(getter, user);
+            log.debug("rsp={}", rsp);
+
+            if (rsp.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+                return ResponseEntity.status(rsp.getStatusLine().getStatusCode()).build();
+            }
+            MediaType contentType = MediaType.TEXT_PLAIN;
+            return ResponseEntity.ok()
+                    .contentType(contentType)
+                    .body(new InputStreamResource(rsp.getEntity().getContent()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private HttpResponse execute(HttpUriRequest request, String user) throws IOException {
 
         String cred_user = user;

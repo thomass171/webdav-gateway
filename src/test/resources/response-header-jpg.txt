@@ -5,12 +5,12 @@ content-length: 593508
 expires: Thu, 19 Nov 1981 08:52:00 GMT
 cache-control: no-store, no-cache, must-revalidate
 pragma: no-cache
-set-cookie: oc_sessionPassphrase=n64qdsPNYVN63F1fWTvAcRTq%2FoJ5%2VbaZ6dkD2sUkwUkYAHUP3lig; path=/; secure; HttpOnly; SameSite=Lax
-set-cookie: oca0c0pjlkz8=6a842f8047512d70ad81ca14e3ba97b9; path=/; secure; HttpOnly; SameSite=Lax
+set-cookie: oc_sessionPassphrase=n64qdHUP3lig; path=/; secure; HttpOnly; SameSite=Lax
+set-cookie: oca0c0pjlkz8=6a87b9; path=/; secure; HttpOnly; SameSite=Lax
 content-security-policy: default-src 'self'; script-src 'self' 'nonce-U2wwaVVhZ3llTT0='; style-src 'self' 'unsafe-inline'; frame-src *; img-src * data: blob:; font-src 'self' data:; media-src *; connect-src *; object-src 'none'; base-uri 'self';
 last-modified: Mon, 15 Nov 2021 19:31:42 GMT
-etag: "cd926f83a4a56d5984c6cf"
-oc-etag: "cd926f83a4ae2984c6cf"
+etag: "cd926f4c6cf"
+oc-etag: "cd92cf"
 content-disposition: attachment; filename*=UTF-8''lake.jpg; filename="lake.jpg"
 strict-transport-security: max-age=15768000; includeSubDomains;
 referrer-policy: no-referrer

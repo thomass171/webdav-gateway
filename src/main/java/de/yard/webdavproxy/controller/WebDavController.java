@@ -19,6 +19,7 @@ public class WebDavController {
     public static final String BASEURL = "/api/webdav";
     public static final String BASEURL_CONTENT = BASEURL + "/content";
     public static final String BASEURL_IMAGE = BASEURL + "/image";
+    public static final String BASEURL_TEXT = BASEURL + "/text";
     private final WebDavService service;
 
     @CrossOrigin
@@ -35,5 +36,11 @@ public class WebDavController {
     @GetMapping(value = BASEURL_IMAGE, produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<InputStreamResource> webdavImage(@RequestParam String host, @RequestParam String user, @RequestParam String name) {
         return service.image(host,user,name);
+    }
+
+    @CrossOrigin
+    @GetMapping(value = BASEURL_TEXT, produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<InputStreamResource> webdavText(@RequestParam String host, @RequestParam String user, @RequestParam String name) {
+        return service.text(host,user,name);
     }
 }
